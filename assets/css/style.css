@@ -48,7 +48,8 @@ body {
 
 body,
 button,
-input {
+input,
+textarea {
     font-family: var(--font-family);
     font-size: var(--font-size-5);
 }
@@ -426,28 +427,44 @@ button {
     
 }
 
-.review__profile {
+.review__card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
 
+.review__profile {
+    display: flex;
+    align-items: center;
+    column-gap: .7rem;
 }
 
 .review__profile-img {
-
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
 }
 
 .review__profile-data {
-
+    display: flex;
+    flex-direction: column;
 }
 
 .review__profile-name {
-
+    font-size: var(--font-size-5);
+    font-weight: var(--font-weight-semibold);
+    color: var(--heading-color);
 }
 
 .review__profile-title {
-
+    font-size: var(--font-size-6);
 }
 
 .review__quote {
-
+    font-size: 3rem;
+    font-weight: var(--font-weight-bold);
+    color: var(--primary-color);
 }
 
 .review__description {
@@ -465,24 +482,41 @@ button {
 
 
 .contact__form {
-
+    display: flex;
+    flex-direction: column;
+    gap: .3rem;
+    align-items: center;
 }
 
 .contact__inputs {
-
+    display: grid;
+    row-gap: .6rem;
+    width: 100%;
 }
 
 .contact__input {
+    padding: .3rem .4rem;
+    background-color: var(--background-color);
+    border: none;
+    border-radius: .3rem;
+    outline: none;
+    color: var(--text-color-light);
+}
 
+.contact__input--area {
+    height: 6rem;
 }
 
 /* FOOTER */
 .footer {
-
+    background-color: var(--background-color);
+    padding: 1rem 0 2rem;
 }
 
 .footer__container {
-
+    display: grid;
+    row-gap: 2rem;
+    margin-bottom: 2rem;
 }
 
 .footer__data {
@@ -490,11 +524,14 @@ button {
 }
 
 .footer__subtitle {
-
+    margin-bottom: .8rem;
+    font-size: var(--font-size-3);
 }
 
 .footer__list {
-
+    display: flex;
+    flex-direction: column;
+    gap: .6rem;
 }
 
 .footer__list-item {
@@ -502,11 +539,15 @@ button {
 }
 
 .footer__link {
-
+    display: flex;
+    align-items: center;
+    gap: .6rem;
+    font-size: var(--font-size-6);
+    color: var(--text-color-light);
 }
 
 .footer__link-icon {
-
+    color: var(--primary-color);
 }
 
 .footer__link-text {
@@ -514,7 +555,7 @@ button {
 }
 
 .footer__copy {
-    
+    text-align: center;
 }
 
 /* MEDIA QUERIES */
