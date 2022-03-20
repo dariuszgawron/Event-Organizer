@@ -20,13 +20,14 @@
     /* COLORS */
     --primary-color: hsl(246, 100%, 66%);
     --secondary-color: hsl(0, 0%, 73%);
+    --background-primary-color: hsl(0, 0%, 23%);
+    --background-secondary-color: hsl(0, 0%, 30%);
+    --background-tertiary-color: hsl(36, 77%, 10%);
+    --background-button-color: hsl(0, 0%, 43%);
     --background-color: hsl(36, 77%, 10%);
     --navbar-color: hsl(0, 0%, 70%);
-    --text-color-light: hsl(0, 0%, 58%);
-    --text-color-dark: hsl(36, 73%, 48%);
-    --heading-color: hsl(0, 0%, 100%);
-    /* --border-color: ; */
-
+    --text-color-light: hsl(0, 0%, 100%);
+    --text-color-dark: hsl(0, 0%, 75%);
 }
 
 /* GENERAL STYLES & RESETS */
@@ -42,8 +43,8 @@ html {
 
 body {
     margin-top: 3rem;
-    background-color: var(--background-color);
-    color: var(--text-color-light);
+    background-color: var(--background-primary-color);
+    color: var(--text-color-dark);
 }
 
 body,
@@ -51,14 +52,14 @@ button,
 input,
 textarea {
     font-family: var(--font-family);
-    font-size: var(--font-size-5);
+    font-size: var(--font-size-6);
 }
 
 h1,
 h2,
 h3 {
     font-weight: var(--font-weight-medium);
-    color: var(--heading-color);
+    color: var(--text-color-light);
 }
 
 ul {
@@ -82,7 +83,7 @@ button {
 
 /* COMMON CSS CLASSES */
 .container {
-    max-width: 1200px;
+    max-width: 1024px;
     margin-left: 1.5rem;
     margin-right: 1.5rem;
 }
@@ -111,10 +112,10 @@ button {
     display: inline-flex;
     padding: .4rem 1.2rem;
     border-radius: .4rem;
-    background-color: var(--secondary-color);
+    background-color: var(--background-button-color);
     color: var(--text-color-light);
     font-weight: var(--font-weight-medium);
-    
+    transition: .4s;
 }
 
 .button:hover {
@@ -124,8 +125,8 @@ button {
 /* HEADER */
 .header {
     width: 100%;
-    background-color: var(--navbar-color);
-    box-shadow: 0 2px 5px rgba(131, 131, 131, 0.9);
+    background-color: var(--background-secondary-color);
+    box-shadow: 0 2px 7px rgba(90, 90, 90, 0.9);
 }
 
 .header--fixed {
@@ -145,9 +146,10 @@ button {
 .nav__logo {
     display: inline-flex;
     align-items: center;
-    column-gap: .3rem;
-    font-weight: var(--font-weight-medium);
-    color: var(--heading-color);
+    /* column-gap: .3rem; */
+    font-size: var(--font-size-4);
+    font-weight: var(--font-weight-bold);
+    color: var(--text-color-light);
 }
 
 .nav__logo--primary {
@@ -174,7 +176,8 @@ button {
 }
 
 .nav__link {
-    color: var(--text-color-light);
+    font-size: var(--font-size-5);
+    color: var(--text-color-dark);
     /* font-weight: var(--font-weight-medium); */
 }
 
@@ -183,6 +186,7 @@ button {
 }
 
 .nav__link--active {
+    font-weight: var(--font-weight-semibold);
     color: var(--primary-color);
 }
 
@@ -197,14 +201,13 @@ button {
 
 .nav__toggle {
     font-size: var(--font-size-3);
-
     cursor: pointer;
 }
 
 
 /* HOME */
 .home {
-    padding: 1rem 0 2rem;
+    padding: 2.5rem 0 2rem;
 }
 
 .home__container {
@@ -256,33 +259,32 @@ button {
 
 .services__card {
     position: relative;
-    padding: .8rem 1.2rem;
+    padding: 1.5rem;
     text-align: center;
-    background-color: var(--secondary-color);
-
+    background-color: var(--background-secondary-color);
 }
 
 .services__logo {
     display: inline-flex;
     justify-content: center;
-    width: calc(1.4rem + var(--font-size-5));
-    height: calc(1.4rem + var(--font-size-5));
-    padding: .7rem;
-    margin-bottom: .5rem;
+    width: calc(2rem + var(--font-size-4));
+    height: calc(2rem + var(--font-size-4));
+    margin-bottom: .9rem;
     border-radius: 50%;
     background-color: var(--primary-color);
 }
 
 .services__logo-icon {
+    align-self: center;
     font-size: var(--font-size-4);
-    color: var(--heading-color);
+    color: var(--text-color-light);
 }
 
 .services__title {
     margin-bottom: .6rem;
     font-size: var(--font-size-5);
     font-weight: var(--font-weight-semibold);
-    color: var(--heading-color);
+    color: var(--text-color-light);
 }
 
 .services__description {
@@ -302,17 +304,19 @@ button {
 .about__img {
     width: 95%;
     justify-self: center;
+    align-self: center;
     border: 7px solid var(--secondary-color);
 }
 
 .about__data {
-
+    align-self: center;
 }
 
 .about__title {
     margin-bottom: 1.2rem;
     font-size: var(--font-size-2);
     font-weight: var(--font-weight-medium);
+    text-transform: capitalize;
 }
 
 .about__description {
@@ -334,7 +338,7 @@ button {
     position: relative;
     padding: .4rem;
     text-align: center;
-    background-color: var(--secondary-color);
+    background-color: var(--background-secondary-color);
     overflow: hidden;
 }
 
@@ -359,7 +363,7 @@ button {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--secondary-color);
+    background-color: var(--background-secondary-color);
     z-index: 10;
     transition: .4s;
 }
@@ -383,15 +387,19 @@ button {
     display: flex;
     justify-content: center;
     align-items: center;
-    column-gap: .9rem;
-    background-color: var(--secondary-color);
+    column-gap: 1.1rem;
+    background-color: var(--background-secondary-color);
     z-index: 10;
     transition: .4s;
 }
 
 .gallery__link {
-    font-size: var(--font-size-4);
-    color: var(--heading-color)
+    font-size: var(--font-size-5);
+    color: var(--text-color-light)
+}
+
+.gallery__link:hover {
+    color: var(--primary-color);
 }
 
 .gallery__link-icon {
@@ -412,8 +420,13 @@ button {
     position: relative;
     padding: .8rem 0;
     text-align: center;
-    background-color: var(--background-color);
+    background-color: var(--background-secondary-color);
     border: none;
+    transition: .4s;
+}
+
+.price__card:hover {
+    transform: scale(1.03);
 }
 
 .price__title {
@@ -428,6 +441,7 @@ button {
     margin-bottom: 1rem;
     font-size: var(--font-size-1);
     font-weight: var(--font-weight-medium);
+    color: var(--text-color-light);
 }
 
 .price__list {
@@ -439,7 +453,16 @@ button {
 }
 
 .price__list-item {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    column-gap: .4rem;
+}
 
+.price__list-icon{
+    font-size: var(--font-size-5);
+    font-weight: var(--font-weight-bold);
+    color: var(--primary-color);
 }
 
 /* REVIEW */
@@ -454,7 +477,7 @@ button {
 
 .review__card {
     padding: 1rem;
-    background-color: var(--secondary-color);
+    background-color: var(--background-secondary-color);
 }
 
 .review__card-header {
@@ -484,7 +507,7 @@ button {
 .review__profile-name {
     font-size: var(--font-size-5);
     font-weight: var(--font-weight-semibold);
-    color: var(--heading-color);
+    color: var(--text-color-light);
 }
 
 .review__profile-title {
@@ -509,15 +532,17 @@ button {
 }
 
 .contact__container {
-
+    padding-bottom: 2rem;
 }
 
 
 .contact__form {
     display: flex;
     flex-direction: column;
-    gap: .3rem;
+    gap: 1rem;
     align-items: center;
+    max-width: 700px;
+    margin: 0 auto;
 }
 
 .contact__inputs {
@@ -527,16 +552,20 @@ button {
 }
 
 .contact__input {
-    padding: .3rem .4rem;
-    background-color: var(--background-color);
+    padding: .5rem .7rem;
+    background-color: var(--background-secondary-color);
     border: none;
     border-radius: .3rem;
     outline: none;
-    color: var(--text-color-light);
+    color: var(--text-color-dark);
+}
+
+.contact__input::placeholder {
+    color: var(--text-color-dark);
 }
 
 .contact__input--area {
-    height: 6rem;
+    height: 12rem;
 }
 
 /* FOOTER */
@@ -575,7 +604,7 @@ button {
     align-items: center;
     gap: .6rem;
     font-size: var(--font-size-6);
-    color: var(--text-color-light);
+    color: var(--text-color-dark);
 }
 
 .footer__link-icon {
@@ -608,17 +637,39 @@ button {
 }
 
 /* Medium screen */
+@media screen and (min-width: 576px) {
+    .services__container {
+        grid-template-columns: repeat(2,1fr);
+        gap: 1rem;
+    }
+
+    .gallery__container {
+        grid-template-columns: repeat(2,1fr);
+        gap: 1rem;
+    }
+
+    .price__container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .footer__container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 @media screen and (max-width: 767px) {
     .nav__menu {
         position: fixed;
         top: -100%;
         left: 0;
         width: 100%;
+        padding: 5rem 2rem 2rem;
         z-index: 100;
-        background-color: var(--navbar-color);
+        background-color: var(--background-secondary-color);
+        box-shadow: 0 2px 5px rgba(90, 90, 90, 0.9);
         transition: .4s;
     }
-
     .nav__menu--show {
         top: 0;
     }
@@ -628,6 +679,9 @@ button {
     .section {
 
     }
+    .section__title {
+        font-size: var(--font-size-2);
+    }
 
     .nav__toggle,
     .nav__close {
@@ -635,7 +689,10 @@ button {
     }
     .nav__list {
         flex-direction: row;
-        column-gap: 2.5rem;
+        column-gap: 1.5rem;
+    }
+    .nav__link {
+        font-size: var(--font-size-6);
     }
 
     .services__container {
@@ -643,17 +700,23 @@ button {
         gap: .7rem;
     }
 
+    .home__title {
+        font-size: var(--font-size-2);
+        width: 55%;
+    }
+
     .about__container {
         grid-template-columns: repeat(2,1fr);
         column-gap: 2rem;
     }
-
-    .gallery__container {
-        grid-template-columns: repeat(3,1fr);
-        gap: 1.5rem;
+    .about__title {
+        font-size: var(--font-size-3);
     }
 
-    .price__container,
+    .price__value {
+        font-size: var(--font-size-2);
+    }
+
     .footer__container {
         grid-template-columns: repeat(4,1fr);
         column-gap: 1rem;
@@ -677,5 +740,22 @@ button {
         margin-left: auto;
         margin-right: auto;
     }
-}
 
+    .gallery__container {
+        grid-template-columns: repeat(3,1fr);
+        gap: 1.5rem;
+    }
+
+    .price__container {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1rem;
+    }
+
+    .contact__inputs {
+        grid-template-columns: repeat(2, 1fr);
+        gap: .6rem;
+    }
+    .contact__input--area {
+        grid-column: 1 / span 2;
+    }
+}
