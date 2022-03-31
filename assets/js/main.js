@@ -25,9 +25,6 @@ function showHeader() {
 }
 window.addEventListener('scroll', showHeader);
 
-// SCROLL UP
-
-
 // SCROLL SECTIONS
 const sections = document.querySelectorAll('section[id]');
 function changeActiveMenuItem() {
